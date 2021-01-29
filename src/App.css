@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+.Auth {
+    margin-top: 300px;
+    max-width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Auth-block {
+    max-width: 900px;
+    min-width: 300px;
+    margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.List {
+    border-right: 1px solid black;
+    height: calc(100vh - 56px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 150px;
+    resize: none;
 }
 
-.App-link {
-  color: #61dafb;
+.info_block {
+    max-height: 5vh;
+    min-height: 5vh;
+    border-bottom: 1px solid black;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Block_Chat {
+    max-height: 70vh;
+    min-height: 70vh;
+    width: 100%;
+}
+
+.area_messeages {
+    max-height: 70vh;
+    min-height: 40vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.area_messeages .row {
+    width: auto;
+}
+.message {
+    border-radius: 15px;
+    min-width: 100px;
+    max-width: 600px;
+    min-height: 50px;
+    max-height: auto;
+    background: grey;
+    margin-bottom: 15px;
+}
+.my_message {
+    background: red;
+}
+.message_name p {
+    margin: 0;
 }

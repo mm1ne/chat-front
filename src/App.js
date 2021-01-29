@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { useState }  from 'react';
 import './App.css';
+import Auth from './Screens/Auth'
+import SignUp from './Screens/SignUp'
+import Navigation from "./Components/navbar";
+import Dialogs from "./Screens/Dialogs";
+import { connect } from 'react-redux'
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-function App() {
+
+function App(props) {
+
+  const iAuth = props.Auth
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div className="Container">
+      <Navigation UserName={iAuth.userName} />
+
+      {!iAuth.isAuth ? 
+      <Switch>
+        <Route exact path="/" component={Auth} />
+        <Route path="/signup" component={SignUp} />
+      </Switch> : 
+       <Route exact path="" component={Dialogs} />
+      }
+     
     </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default connect(state => ({
+  Auth: state.Auths,
+}))(App);
+
